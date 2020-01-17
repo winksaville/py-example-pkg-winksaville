@@ -5,7 +5,7 @@ with open('README.md', 'r') as fh:
 
 setuptools.setup(
     name='example-pkg-winksaville', # Replace with your own username
-    version='0.0.1',
+    version='0.0.2',
     license='MIT',
     author='Wink Saville',
     author_email='wink@saville.com',
