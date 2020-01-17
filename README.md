@@ -8,7 +8,7 @@ to write your content.
 
 ## Hello method
 
-Added hello method to __init__.py
+Added hello method in example_pkg/hello.py
 
 ### Test
 
