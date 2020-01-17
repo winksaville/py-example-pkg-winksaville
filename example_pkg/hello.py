@@ -1,2 +1,4 @@
+from markdown import markdown
+
 def hello(s: str) -> None:
-    print(s)
+    print(markdown(s))
