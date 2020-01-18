@@ -5,7 +5,10 @@ with open('README.md', 'r') as fh:
 
 setuptools.setup(
     name='example-pkg-winksaville', # Replace with your own username
-    version='0.0.5',
+    entry_points = {
+        'console_scripts': ['hello=example_pkg.command_line:main'],
+    },
+    version='0.0.6',
     license='MIT',
     author='Wink Saville',
     author_email='wink@saville.com',
