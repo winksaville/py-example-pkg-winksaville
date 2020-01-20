@@ -3,9 +3,16 @@
 Created from [this tutorial](https://packaging.python.org/tutorials/packaging-projects/)
 and [this](https://python-packaging.readthedocs.io/en/latest/minimal.html)
 
-This is a simple example package. You can use
-[Github-flavored Markdown](https://guides.github.com/features/mastering-markdown/)
-to write your content.
+This is uploaded to test.pypi.org as [example-pkg-winksaville](https://test.pypi.org/project/example-pkg-winksaville/)
+as it is only an example package and not useful.
+
+## Build and upload
+
+Only uploaded to `pypi_repo=--repository-url https://test.pypi.org/legacy/`
+```
+make build
+make upload
+```
 
 ## Install
 

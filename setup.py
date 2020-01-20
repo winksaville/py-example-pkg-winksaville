@@ -8,7 +8,7 @@ setuptools.setup(
     entry_points = {
         'console_scripts': ['hello=example_pkg.command_line:main'],
     },
-    version='0.0.6',
+    version='0.0.7',
     license='MIT',
     author='Wink Saville',
     author_email='wink@saville.com',
