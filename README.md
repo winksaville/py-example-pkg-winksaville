@@ -9,7 +9,9 @@ to write your content.
 
 ## Install
 
-Install using `pip` in normal mode `pip install .` or in [editable mode](https://pip.pypa.io/en/stable/reference/pip_install/#editable-installs) with `pip install -e .`:
+Install using `pip` in normal mode `pip install .` or in
+[editable mode](https://pip.pypa.io/en/stable/reference/pip_install/#editable-installs)
+with `pip install -e .`:
 ```
 (testpypi) wink@wink-desktop:~/prgs/python/packaging_tutorial (master)
 $ pip install .
@@ -17,20 +19,18 @@ $ pip install .
 
 ## Hello method
 
-Is the main interface provided by this package, it takes a sring
-as a parameter and prints it.
+`hello(s: str) -> None` method is the main interface provided by
+this package.
 
-Example, from the project root (i.e. from the directory where setup.py is located) you can do:
+Example, from the project root (i.e. from the directory where
+setup.py is located) you can do:
 ```
+(testpypi) wink@wink-desktop:~/prgs/python/packaging_tutorial (master)
 $ python3 -c "import example_pkg as ep; ep.hello('**hi**')"
 <p><strong>hi</strong></p>
 ```
-Or from the repl if it's installed:
+Or from the repl
 ```
-(testpypi) wink@wink-desktop:~/prgs/python/packaging_tutorial (master)
-$ pip install .
-...
-
 (testpypi) wink@wink-desktop:~/prgs/python/packaging_tutorial (master)
 $ python3
 Python 3.8.1 | packaged by conda-forge | (default, Jan  5 2020, 20:58:18) 
@@ -43,58 +43,28 @@ Type "help", "copyright", "credits" or "license" for more information.
 ```
 ## Command line operation
 
-Install then `hello` is an executable which prints 'hi there' or the
+Install then `hello` is a command which prints 'hi there' or the
 concatenation of the arguments:
 ```
 (testpypi) wink@wink-desktop:~/prgs/python/packaging_tutorial (master)
 $ hello
 <p>hi there</p>
 (testpypi) wink@wink-desktop:~/prgs/python/packaging_tutorial (master)
-$ hello yo dude
-<p>yo dude</p>
+$ hello '**yo dude**'
+<p><strong>yo dude</strong></p>
 ```
 ### Test
 
-#### Unit tests
-
-Use discover:
+Use `pytest`:
 ```
-(testpypi) wink@wink-desktop:~/prgs/python/packaging_tutorial (master)
-$ python -m unittest discover
-..
-----------------------------------------------------------------------
-Ran 2 tests in 0.003s
+testpypi) wink@wink-desktop:~/prgs/python/packaging_tutorial (master)
+$ pytest
+======================== test session starts =========================
+platform linux -- Python 3.8.1, pytest-5.3.3, py-1.8.1, pluggy-0.13.1
+rootdir: /home/wink/prgs/python/packaging_tutorial
+collected 2 items
 
-OK
-```
+example_pkg/tests/test_hello.py ..                             [100%]
 
-Execute test_hello.py
-```
-(testpypi) wink@wink-desktop:~/prgs/python/packaging_tutorial (master)
-$ python example_pkg/tests/test_hello.py 
-test_hello.py.__main__
-test_hello.py.tsts(verbosity=1)
-..
-----------------------------------------------------------------------
-Ran 2 tests in 0.003s
-
-OK
-```
-
-Using REPL:
-```
-(testpypi) wink@wink-desktop:~/prgs/python/packaging_tutorial (master)
-$ python
-Python 3.8.1 | packaged by conda-forge | (default, Jan  5 2020, 20:58:18) 
-[GCC 7.3.0] on linux
-Type "help", "copyright", "credits" or "license" for more information.
->>> import example_pkg.tests as t
->>> t.tsts()
-test_hello.py.tsts(verbosity=1)
-..
-----------------------------------------------------------------------
-Ran 2 tests in 0.009s
-
-OK
->>>
+========================= 2 passed in 0.07s ==========================
 ```

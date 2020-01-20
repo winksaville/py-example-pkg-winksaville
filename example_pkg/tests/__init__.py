@@ -1,1 +1,1 @@
-from .test_hello import tests, tsts
+#from .test_hello import tests, tsts

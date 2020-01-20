@@ -25,5 +25,8 @@ setuptools.setup(
     install_requires=[
         'markdown',
     ],
+    tests_require=[
+        'pytest',
+    ],
     python_requires='>=3.8',
 )
