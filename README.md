@@ -14,6 +14,33 @@ make build
 make upload
 ```
 
+## Tests
+
+Run `make test` or `pytest`
+```
+(py-38) wink@3900x:~/prgs/python/projects/example-pkg-winksaville (master)
+$ make test
+pytest tests
+============================ test session starts =============================
+platform linux -- Python 3.8.5, pytest-6.0.2, py-1.9.0, pluggy-0.13.1
+rootdir: /home/wink/prgs/python/projects/example-pkg-winksaville
+collected 2 items                                                            
+
+tests/test_hello.py ..                                                 [100%]
+
+============================= 2 passed in 0.02s ==============================
+(py-38) wink@3900x:~/prgs/python/projects/example-pkg-winksaville (master)
+$ pytest
+============================ test session starts =============================
+platform linux -- Python 3.8.5, pytest-6.0.2, py-1.9.0, pluggy-0.13.1
+rootdir: /home/wink/prgs/python/projects/example-pkg-winksaville
+collected 2 items                                                            
+
+tests/test_hello.py ..                                                 [100%]
+
+============================= 2 passed in 0.02s ==============================
+```
+
 ## Install
 
 Install using `pip` in normal mode `pip install .` or in
@@ -50,7 +77,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 ```
 ## Command line operation
 
-Install then `hello` is a command which prints 'hi there' or the
+[Install](#install) and then `hello` is a command which prints 'hi there' or the
 concatenation of the arguments:
 ```
 (testpypi) wink@wink-desktop:~/prgs/python/packaging_tutorial (master)
@@ -60,18 +87,6 @@ $ hello
 $ hello '**yo dude**'
 <p><strong>yo dude</strong></p>
 ```
-### Test
 
-Use `pytest`:
-```
-testpypi) wink@wink-desktop:~/prgs/python/packaging_tutorial (master)
-$ pytest
-======================== test session starts =========================
-platform linux -- Python 3.8.1, pytest-5.3.3, py-1.8.1, pluggy-0.13.1
-rootdir: /home/wink/prgs/python/packaging_tutorial
-collected 2 items
-
-example_pkg/tests/test_hello.py ..                             [100%]
-
-========================= 2 passed in 0.07s ==========================
-```
+This works by adding [entry_points](https://python-packaging.readthedocs.io/en/latest/command-line-scripts.html#the-console-scripts-entry-point)
+to setuptools.setup and then the command_line.py file in the package.
