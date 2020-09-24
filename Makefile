@@ -17,10 +17,13 @@ SRCS= \
  example_pkg/__init__.py \
  example_pkg/command_line.py \
  example_pkg/hello.py \
- example_pkg/tests/__init__.py \
- example_pkg/tests/test_hello.py
+ tests/__init__.py \
+ tests/test_hello.py
 
-.PHONY: upload clean
+.PHONY: build upload clean
+
+build: build/completed_ts
+
 build/completed_ts: ${SRCS}
 	python3 setup.py sdist bdist_wheel
 	touch build/completed_ts
@@ -33,3 +36,4 @@ test:
 
 clean:
 	rm -rf build dist example_pkg_winksaville.egg-info __pycache__
+	rm -rf .mypy_cache .pytest_cache
