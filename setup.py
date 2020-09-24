@@ -15,7 +15,7 @@ setuptools.setup(
     description='A small example package',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    url='https://github.com/winksaville/python-example-pkg-winksaville',
+    url='https://github.com/winksaville/py-example-pkg-winksaville',
     packages=setuptools.find_packages(),
     classifiers=[
         'Programming Language :: Python :: 3',
