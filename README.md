@@ -8,7 +8,7 @@ as it is only an example package and not useful.
 
 ## Build and upload
 
-Only uploaded to `pypi_repo=--repository-url https://test.pypi.org/legacy/`
+This is only uploaded to `pypi_repo=--repository-url https://test.pypi.org/legacy/`
 ```
 make build
 make upload
