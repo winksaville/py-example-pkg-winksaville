@@ -28,5 +28,8 @@ build/completed_ts: ${SRCS}
 upload: build/completed_ts
 	python3 -m twine upload ${pypi_repo} dist/*
 
+test:
+	pytest tests
+
 clean:
 	rm -rf build dist example_pkg_winksaville.egg-info __pycache__
