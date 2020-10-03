@@ -1,4 +1,19 @@
+from dataclasses import dataclass
 from markdown import markdown
+
+
+@dataclass
+class dc:
+    """Example data class with documentation"""
+
+    #: Comment before which can be
+    #: multiple lines
+    field0: float=0
+    field1: float=1 #: Comment, one line only
+    field2: float=2
+    """Comment afterwards one or more
+    lines
+    """
 
 class YoDude:
     """
@@ -15,8 +30,7 @@ class YoDude:
         self.intro = self.intro.strip()
 
     def hello(self, person: str="Nobody") -> None:
-        """
-        Say hello to person
+        """Say hello to person
 
         :param person: Say hello to the person
         """
