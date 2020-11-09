@@ -5,9 +5,8 @@
 # paste the token from 1Password.
 
 # Use a blank pypi_repo to upload to the "non-test" repository
-
-pypi_repo=--repository-url https://test.pypi.org/legacy/
 #pypi_repo=
+pypi_repo=--repository-url https://test.pypi.org/legacy/
 
 SRCS= \
  Makefile \
@@ -56,8 +55,17 @@ build/completed_ts: ${SRCS}
 	python3 setup.py sdist bdist_wheel
 	touch build/completed_ts
 
+.PHONY: install
+install: ## Install normally (NOT in editable mode)
+	pip install .
+
+.PHONY: install-editable,ie
+install-editable: ie ## Install in editable mode
+ie: ## Install in editable mode
+	pip install -e .
+
 .PHONY: upload
-upload: build/completed_ts ## Update to pypi
+upload: build/completed_ts ## Upload to ${pypi_repo} (default is https://test.pypi.org/legacy/)
 	python3 -m twine upload ${pypi_repo} dist/*
 
 .PHONY: docs

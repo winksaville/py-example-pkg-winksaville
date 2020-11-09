@@ -43,13 +43,18 @@ tests/test_hello.py ..                                                 [100%]
 
 ## Install
 
-Install using `pip` in normal mode `pip install .` or in
+Install using make in normal mode:
+```
+make install
+```
+Or in editable mode:
+```
+make ie
+```
+
+Or manually with `pip` in normal mode `pip install .` or in
 [editable mode](https://pip.pypa.io/en/stable/reference/pip_install/#editable-installs)
-with `pip install -e .`:
-```
-(testpypi) wink@wink-desktop:~/prgs/python/packaging_tutorial (master)
-$ pip install .
-```
+with `pip install -e .`
 
 ## Hello method
 
