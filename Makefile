@@ -8,7 +8,7 @@
 #pypi_repo=
 pypi_repo=--repository-url https://test.pypi.org/legacy/
 
-format_srcs=setup.py example_pkg/ tests/
+format_srcs=setup.py example_pkg/ tests/ docs/
 
 SRCS= \
  Makefile \
