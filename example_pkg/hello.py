@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+
 from markdown import markdown
 
 
@@ -8,12 +9,13 @@ class dc:
 
     #: Comment before which can be
     #: multiple lines
-    field0: float=0
-    field1: float=1 #: Comment, one line only
-    field2: float=2
+    field0: float = 0
+    field1: float = 1  #: Comment, one line only
+    field2: float = 2
     """Comment afterwards one or more
     lines
     """
+
 
 class YoDude:
     """
@@ -22,14 +24,14 @@ class YoDude:
     :param intro: intro portion
     """
 
-    intro: str=" YoDude " #: The intro for the hello
+    intro: str = " YoDude "  #: The intro for the hello
 
-    def __init__(self, intro: str=None):
+    def __init__(self, intro: str = None):
         if intro is not None:
             self.intro = intro
         self.intro = self.intro.strip()
 
-    def hello(self, person: str="Nobody") -> None:
+    def hello(self, person: str = "Nobody") -> None:
         """Say hello to person
 
         :param person: Say hello to the person

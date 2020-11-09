@@ -8,6 +8,8 @@
 #pypi_repo=
 pypi_repo=--repository-url https://test.pypi.org/legacy/
 
+format_srcs=setup.py example_pkg/ tests/
+
 SRCS= \
  Makefile \
  README.md \
@@ -54,6 +56,13 @@ build: build/completed_ts
 build/completed_ts: ${SRCS}
 	python3 setup.py sdist bdist_wheel
 	touch build/completed_ts
+
+.PHONY: f, format
+f: format ## format, lint py files with isort, black and flake8
+format: ## format, lint py files with isort, black and flake8
+	isort ${format_srcs}
+	black ${format_srcs}
+	flake8 ${format_srcs}
 
 .PHONY: install
 install: ## Install normally (NOT in editable mode)
