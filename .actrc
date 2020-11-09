@@ -1,0 +1,4 @@
+# This is 16GB compressed and 35GB installed. It can take 30min or more to download.
+# You might want to use `docker pull winksaville/ubuntu-cmake-ninja:18.04-full` so
+# you can see the progress bar!
+-P ubuntu-latest=winksaville/ubuntu-cmake-ninja:18.04-full
