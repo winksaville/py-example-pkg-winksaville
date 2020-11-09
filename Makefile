@@ -66,12 +66,12 @@ format: ## format, lint py files with isort, black and flake8
 
 .PHONY: install
 install: ## Install normally (NOT in editable mode)
-	pip install .
+	pip install . -r requirements.txt
 
 .PHONY: install-editable,ie
 install-editable: ie ## Install in editable mode
 ie: ## Install in editable mode
-	pip install -e .
+	pip install -e . -r requirements.txt -r dev-requirements.txt
 
 .PHONY: upload
 upload: build/completed_ts ## Upload to ${pypi_repo} (default is https://test.pypi.org/legacy/)
